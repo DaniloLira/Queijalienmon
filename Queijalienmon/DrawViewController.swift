@@ -45,6 +45,12 @@ class DrawViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerOb
             }, completionHandler: {success, error in
                 print(error)
             })
+
+            // Para colocar a imagem do canvas no quadro da tela anterior
+//            if let topMostViewController = UIApplication.shared.topMostViewController() as? ViewController{
+//                topMostViewController.canvasView.image = image
+//            }
+            
         }
     }
     
