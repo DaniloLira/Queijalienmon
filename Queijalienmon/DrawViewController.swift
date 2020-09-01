@@ -14,6 +14,8 @@ class DrawViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerOb
 
     @IBOutlet weak var buttonSaveDraw: UIButton!
     @IBOutlet weak var canvas: PKCanvasView!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var newCanvasButton: UIButton!
     
     var draw = PKDrawing()
     
@@ -52,6 +54,16 @@ class DrawViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerOb
 //            }
             
         }
+    }
+    
+    
+    @IBAction func tapCancelButton() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func tapNewCanvasButton() {
+        self.draw = PKDrawing()
+        self.canvas.drawing = draw
     }
     
 }

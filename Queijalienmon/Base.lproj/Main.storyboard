@@ -36,11 +36,17 @@
                                 <rect key="frame" x="20" y="57" width="134" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="cancelButton"/>
+                                <connections>
+                                    <action selector="tapCancelButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rsc-Nf-jwG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0F-u6-3eu">
                                 <rect key="frame" x="264" y="185" width="134" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="newCanvasButton"/>
+                                <connections>
+                                    <action selector="tapNewCanvasButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="rTn-h9-Vn3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,7 +55,9 @@
                     <navigationItem key="navigationItem" id="99f-rb-F9i"/>
                     <connections>
                         <outlet property="buttonSaveDraw" destination="EUt-DR-e4c" id="nyf-qJ-GD7"/>
+                        <outlet property="cancelButton" destination="Hx6-Tz-BRB" id="MwY-Kh-K2D"/>
                         <outlet property="canvas" destination="wsH-U6-i6w" id="YoG-RV-K4Z"/>
+                        <outlet property="newCanvasButton" destination="j0F-u6-3eu" id="VYX-Iu-Jte"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -66,6 +74,10 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="First page background" translatesAutoresizingMaskIntoConstraints="NO" id="GaV-DL-A4R">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A9l-ge-kCJ">
+                                <rect key="frame" x="16" y="241" width="378" height="386"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oe5-E1-isZ">
@@ -114,7 +126,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Compartilhe sua arte" image="shareButton"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Você recebeu o nível x de igualdade com o (nome do personagem)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjz-db-47l">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Você recebeu o nível x de igualdade com o (nome do personagem)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjz-db-47l">
                                 <rect key="frame" x="37" y="74" width="340" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
