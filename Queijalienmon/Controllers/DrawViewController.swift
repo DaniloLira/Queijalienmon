@@ -36,17 +36,16 @@ class DrawViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerOb
     }
 
     @IBAction func saveDraw(_ sender: Any) {
+        
         UIGraphicsBeginImageContextWithOptions(canvas.bounds.size, false , UIScreen.main.scale)
         canvas.drawHierarchy(in: canvas.bounds, afterScreenUpdates: true)
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         
         if image != nil {
-            PHPhotoLibrary.shared().performChanges({
-                PHAssetChangeRequest.creationRequestForAsset(from: image!)
-            }, completionHandler: {success, error in
-                print(error)
-            })
+            PokemonIdentifier.shared.identify(draw: image!)
+            print(PokemonIdentifier.shared.consultResult?.1)
+
 
             // Para colocar a imagem do canvas no quadro da tela anterior
 //            if let topMostViewController = UIApplication.shared.topMostViewController() as? ViewController{
