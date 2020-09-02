@@ -7,11 +7,37 @@
 //
 
 import UIKit
+import Foundation
 
-class ViewController: UIViewController{
+class ViewControlle: UIViewController{
+    
+    @IBOutlet weak var canvasButton: UIButton!
+    @IBOutlet weak var identifyDrawButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(true)
+        
+        guard let drawImage = PokeResult.shared.drawImage else {
+            self.canvasButton.setTitle("Toque para desenhar", for: .normal)
+            return
+        }
+        
+        self.canvasButton.setBackgroundImage(drawImage, for: .normal)
+        self.canvasButton.setTitle("", for: .normal)
     }
 
+    
+    @IBAction func identifyDraw(_ sender: Any) {
+        guard let image = PokeResult.shared.drawImage else {
+            //Tratar erro
+            return
+        }
+        
+        PokemonIdentifier.shared.identify(draw: image)
+    }
 }

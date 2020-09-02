@@ -22,7 +22,7 @@ class DrawViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerOb
     override func viewDidLoad() {
         super.viewDidLoad()
         canvas.delegate = self
-        canvas.drawing = draw
+        canvas.drawing = PokeResult.shared.draw ?? draw
         canvas.allowsFingerDrawing = true
         canvas.alwaysBounceVertical = true
         
@@ -36,22 +36,14 @@ class DrawViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerOb
     }
 
     @IBAction func saveDraw(_ sender: Any) {
-        
         UIGraphicsBeginImageContextWithOptions(canvas.bounds.size, false , UIScreen.main.scale)
         canvas.drawHierarchy(in: canvas.bounds, afterScreenUpdates: true)
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         
         if image != nil {
-            PokemonIdentifier.shared.identify(draw: image!)
-            print(PokemonIdentifier.shared.consultResult?.1)
-
-
-            // Para colocar a imagem do canvas no quadro da tela anterior
-//            if let topMostViewController = UIApplication.shared.topMostViewController() as? ViewController{
-//                topMostViewController.canvasView.image = image
-//            }
-            
+            PokeResult.shared.draw = self.canvas.drawing
+            PokeResult.shared.drawImage = image!
         }
     }
     

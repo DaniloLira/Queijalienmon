@@ -3,9 +3,14 @@ import UIKit
 
 class PokeAPI {
     
-    func get(name: String){
-        let url = URL(string: "https://pokeapi.co/api/v2/pokemon/\(name)")
+    static let shared = PokeAPI()
+
+    static func get(name: String){
+        let lowerCaseName = name.lowercased()
+        
+        let url = URL(string: "https://pokeapi.co/api/v2/pokemon/\(lowerCaseName)")
         let session = URLSession.shared
+        
         let task = session.dataTask(with: url!) {data, response, error in
             do {
                 let decoder = JSONDecoder()
@@ -16,17 +21,19 @@ class PokeAPI {
                     return
                 }
                 
-                self.getImage(url: pokeData.sprites.frontDefault)
-                
-            } catch {
-                print("erro")
+                PokeAPI.getImage(url: pokeData.sprites.frontDefault)
             }
         }
         task.resume()
     }
     
-    func getImage(url: String){
-        
+    static private func getImage(url: String){
+        let url = URL(string: url)
+        let session = URLSession.shared
+        let task = session.dataTask(with: url!) {data, response, error in
+            PokeResult.shared.image = UIImage(data: data!)!
+        }
+        task.resume()
     }
     
 }

@@ -11,24 +11,26 @@ import CoreML
 import UIKit
 import Vision
 
-class PokemonIdentifier {
+public class PokemonIdentifier {
     
     var consultResult: (VNConfidence, String)? = nil {
         didSet {
-            print("Teste")
+            PokeResult.shared.name = consultResult!.1
+            PokeAPI.get(name: consultResult!.1)
         }
     }
     let model = Classificador_Pokemon_1().model
     static let shared = PokemonIdentifier()
     
     lazy var classificationRequest: VNCoreMLRequest = {
-    do {
-        let model = try VNCoreMLModel(for: self.model)
-        let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
-             self?.processClassifications(for: request, error: error)
-    })
-       request.imageCropAndScaleOption = .centerCrop
-       return request
+        do {
+            let model = try VNCoreMLModel(for: self.model)
+            let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
+                self?.processClassifications(for: request, error: error)
+            })
+            
+            request.imageCropAndScaleOption = .centerCrop
+            return request
     } catch {
        fatalError("Failed to load Vision ML model: \(error)")
     }}()
@@ -60,14 +62,13 @@ class PokemonIdentifier {
             fatalError("Unable to create \(CIImage.self) from \(image).")
         }
         
-        DispatchQueue.global(qos: .userInitiated).async {
+        DispatchQueue.main.async {
             let handler = VNImageRequestHandler(ciImage: ciImage, orientation: orientation)
-            
             do {
                 try handler.perform([self.classificationRequest])
             } catch {
                 print("Failed to perform \n\(error.localizedDescription)")
-           }
+            }
         }
     }
     
