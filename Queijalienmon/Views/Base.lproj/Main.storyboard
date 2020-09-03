@@ -135,7 +135,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncz-KD-0AZ" userLabel="Cancel Button">
                                 <rect key="frame" x="20" y="86" width="134" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="cancelButton"/>
+                                <state key="normal" title="Button" image="novo_desenho"/>
                                 <connections>
                                     <action selector="tapBackButton" destination="GlC-XK-jiU" eventType="touchUpInside" id="XTc-gB-hiY"/>
                                     <action selector="tapCancelButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qqr-89-Dyv"/>
@@ -144,7 +144,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5L8-UD-yWn">
                                 <rect key="frame" x="260" y="86" width="134" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Compartilhe sua arte" image="shareButton"/>
+                                <state key="normal" title="Compartilhe sua arte" image="compartilhar"/>
                                 <connections>
                                     <action selector="shareDraw:" destination="GlC-XK-jiU" eventType="touchUpInside" id="5IR-gh-AFa"/>
                                 </connections>
@@ -162,7 +162,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Você recebeu o nível x de igualdade com o (nome do personagem)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjz-db-47l">
-                                <rect key="frame" x="37" y="782" width="340" height="80"/>
+                                <rect key="frame" x="37" y="795" width="340" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -173,7 +173,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Parabéns!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iQ-9t-nPl">
-                                <rect key="frame" x="112" y="750" width="187" height="48"/>
+                                <rect key="frame" x="112" y="764" width="187" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -296,10 +296,11 @@
         <image name="QUEIJOAlienmon" width="1268" height="173"/>
         <image name="board" width="588" height="740"/>
         <image name="cancelButton" width="538" height="164"/>
+        <image name="compartilhar" width="538" height="164"/>
         <image name="identifyButton" width="1036" height="316"/>
         <image name="newCanvasButton" width="538" height="164"/>
+        <image name="novo_desenho" width="538" height="164"/>
         <image name="playButton" width="1036" height="316"/>
         <image name="saveButton" width="538" height="164"/>
-        <image name="shareButton" width="1036" height="316"/>
     </resources>
 </document>

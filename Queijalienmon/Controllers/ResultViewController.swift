@@ -19,6 +19,10 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var congratsLabel: UILabel!
     
+    let rickAndMorty: [String] = ["Rick", "Morty", "Jerry", "Squanchy"]
+    let verbos: [String] = ["comendo", "cagando", "chapado no", "derretendo"]
+    let queijos: [String] = ["queijo coalho", "queijo prato", "queijo manteiga", "queijo parmesão", "queijo cheddar"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -27,7 +31,7 @@ class ResultViewController: UIViewController {
         super.viewWillAppear(animated)
         self.logoImageView.alpha = 0
         
-        self.messageLabel.text = "Parabéns!O seu \(PokeResult.name ?? "") parece o Rick chapado de Queijo Coalho!"
+        self.messageLabel.text = "Seu \(PokeResult.name ?? "") parece o \(self.rickAndMorty.randomElement()!) \(self.verbos.randomElement()!) \(self.queijos.randomElement()!)!"
         self.drawImageView.image = PokeResult.drawImage
         self.pokeImageView.image = PokeResult.image
 
