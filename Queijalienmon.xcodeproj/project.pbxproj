@@ -21,6 +21,7 @@
 		0CFF4D3A24FF104400F0B6E8 /* PokeIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF4D3924FF104400F0B6E8 /* PokeIdentifier.swift */; };
 		0CFF4D3D24FF3D9000F0B6E8 /* PokeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF4D3C24FF3D9000F0B6E8 /* PokeAPI.swift */; };
 		0CFF4D3F24FF3EDE00F0B6E8 /* PokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFF4D3E24FF3EDE00F0B6E8 /* PokeModel.swift */; };
+		3E5A009025011F1600E84F9C /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5A008F25011F1600E84F9C /* LoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		0CFF4D3924FF104400F0B6E8 /* PokeIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeIdentifier.swift; sourceTree = "<group>"; };
 		0CFF4D3C24FF3D9000F0B6E8 /* PokeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeAPI.swift; sourceTree = "<group>"; };
 		0CFF4D3E24FF3EDE00F0B6E8 /* PokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeModel.swift; sourceTree = "<group>"; };
+		3E5A008F25011F1600E84F9C /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				0CFF4D3324FF0E6B00F0B6E8 /* ResultViewController.swift */,
 				0C8EF8C424F93809003FFD62 /* ViewController.swift */,
 				0C70BAEA24FEB0BA0019E312 /* DrawViewController.swift */,
+				3E5A008F25011F1600E84F9C /* LoadingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				0CFF4D3F24FF3EDE00F0B6E8 /* PokeModel.swift in Sources */,
 				0C8EF8C124F93809003FFD62 /* AppDelegate.swift in Sources */,
 				0C8EF8C324F93809003FFD62 /* SceneDelegate.swift in Sources */,
+				3E5A009025011F1600E84F9C /* LoadingViewController.swift in Sources */,
 				0CFF4D3A24FF104400F0B6E8 /* PokeIdentifier.swift in Sources */,
 				0CF69FA224FFE1DC006744B8 /* PokeResult.swift in Sources */,
 			);

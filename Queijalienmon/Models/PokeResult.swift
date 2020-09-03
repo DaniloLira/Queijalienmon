@@ -15,4 +15,11 @@ class PokeResult {
     static var image: UIImage? = nil
     static var draw: PKDrawing? = nil
     static var drawImage: UIImage? = nil
+    
+    static func clean(){
+        PokeResult.name = nil
+        PokeResult.image = nil
+        PokeResult.draw = nil
+        PokeResult.drawImage = nil
+    }
 }
