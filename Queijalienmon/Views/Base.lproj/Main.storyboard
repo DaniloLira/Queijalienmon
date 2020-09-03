@@ -20,21 +20,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUt-DR-e4c">
-                                <rect key="frame" x="260" y="57" width="134" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save" image="saveButton"/>
-                                <connections>
-                                    <action selector="saveDraw:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g5f-Fw-0C3"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wsH-U6-i6w" customClass="PKCanvasView">
                                 <rect key="frame" x="16" y="241" width="378" height="386"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hx6-Tz-BRB">
-                                <rect key="frame" x="20" y="57" width="134" height="41"/>
+                                <rect key="frame" x="20" y="86" width="134" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="cancelButton"/>
                                 <connections>
@@ -47,6 +39,14 @@
                                 <state key="normal" title="Button" image="newCanvasButton"/>
                                 <connections>
                                     <action selector="tapNewCanvasButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="rTn-h9-Vn3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUt-DR-e4c">
+                                <rect key="frame" x="260" y="86" width="134" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save" image="saveButton"/>
+                                <connections>
+                                    <action selector="saveDraw:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g5f-Fw-0C3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -97,12 +97,21 @@
                                     <segue destination="jbn-Ns-GMT" kind="show" animates="NO" id="7Ou-c0-ePr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBD-N2-W8g">
+                                <rect key="frame" x="20" y="86" width="134" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="cancelButton"/>
+                                <connections>
+                                    <action selector="tapBackButton" destination="LFF-oI-dNk" eventType="touchUpInside" id="P6r-Fr-nwj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="x7j-8c-pE7"/>
                     </view>
                     <navigationItem key="navigationItem" id="93Y-U9-wQq"/>
                     <connections>
+                        <outlet property="backButton" destination="lBD-N2-W8g" id="Eza-ol-cqF"/>
                         <outlet property="canvasButton" destination="Oe5-E1-isZ" id="Zjv-Wu-FB3"/>
                     </connections>
                 </viewController>
@@ -124,7 +133,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncz-KD-0AZ" userLabel="Cancel Button">
-                                <rect key="frame" x="20" y="57" width="134" height="41"/>
+                                <rect key="frame" x="20" y="86" width="134" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="cancelButton"/>
                                 <connections>
@@ -133,7 +142,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5L8-UD-yWn">
-                                <rect key="frame" x="260" y="57" width="134" height="41"/>
+                                <rect key="frame" x="260" y="86" width="134" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Compartilhe sua arte" image="shareButton"/>
                                 <connections>
@@ -153,9 +162,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Você recebeu o nível x de igualdade com o (nome do personagem)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjz-db-47l">
-                                <rect key="frame" x="37" y="770" width="340" height="80"/>
+                                <rect key="frame" x="37" y="782" width="340" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="QUEIJOAlienmon" translatesAutoresizingMaskIntoConstraints="NO" id="bu0-ap-kXE">
+                                <rect key="frame" x="20" y="102" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Parabéns!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iQ-9t-nPl">
+                                <rect key="frame" x="112" y="750" width="187" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -166,7 +186,9 @@
                     <navigationItem key="navigationItem" id="bQJ-Nv-tdI"/>
                     <connections>
                         <outlet property="backButton" destination="Ncz-KD-0AZ" id="0yC-ZT-tay"/>
+                        <outlet property="congratsLabel" destination="1iQ-9t-nPl" id="1gB-yd-K9n"/>
                         <outlet property="drawImageView" destination="eIt-mi-Wj3" id="dus-a4-duA"/>
+                        <outlet property="logoImageView" destination="bu0-ap-kXE" id="4Pg-sa-FC7"/>
                         <outlet property="messageLabel" destination="mjz-db-47l" id="gNK-uk-CkA"/>
                         <outlet property="pokeImageView" destination="BwJ-Oh-fdX" id="pBP-Hj-HzZ"/>
                         <outlet property="shareButton" destination="5L8-UD-yWn" id="UTv-OG-Y47"/>
@@ -186,7 +208,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="LFF-oI-dNk" kind="relationship" relationship="rootViewController" id="zjw-Kg-w75"/>
+                        <segue destination="mA3-Wg-zL1" kind="relationship" relationship="rootViewController" id="6sa-Om-J4U"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DuH-6w-j32" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -210,6 +232,9 @@
                                 <rect key="frame" x="77" y="413" width="260" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Identificar pokemon" image="playButton"/>
+                                <connections>
+                                    <segue destination="LFF-oI-dNk" kind="show" id="F31-mC-CM6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -219,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ffj-2D-CGF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="104" y="688"/>
+            <point key="canvasLocation" x="126" y="138"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="xjA-3T-4kK">
@@ -239,9 +264,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Capturando seu Pokemon..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhy-Dq-IQj">
-                                <rect key="frame" x="101" y="810" width="212" height="21"/>
+                                <rect key="frame" x="94" y="810" width="227" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -268,6 +293,7 @@
     <resources>
         <image name="First page background" width="1500" height="3248"/>
         <image name="MenuBackground" width="1500" height="3248"/>
+        <image name="QUEIJOAlienmon" width="1268" height="173"/>
         <image name="board" width="588" height="740"/>
         <image name="cancelButton" width="538" height="164"/>
         <image name="identifyButton" width="1036" height="316"/>

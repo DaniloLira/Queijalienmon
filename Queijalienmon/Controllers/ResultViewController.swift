@@ -16,6 +16,8 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var congratsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +25,9 @@ class ResultViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.logoImageView.alpha = 0
         
-        self.messageLabel.text = "Parabéns! O seu \(PokeResult.name ?? "") obteve o grau Rick chapado de Queijo Coalho! Você é um grande desenhista, seu pokelover!"
+        self.messageLabel.text = "Parabéns!O seu \(PokeResult.name ?? "") parece o Rick chapado de Queijo Coalho!"
         self.drawImageView.image = PokeResult.drawImage
         self.pokeImageView.image = PokeResult.image
 
@@ -44,6 +47,7 @@ class ResultViewController: UIViewController {
     @IBAction func shareDraw(_ sender: Any) {
         self.hideButtons(bool: true)
         let image = createImageFromView()
+        
         let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         
         activityController.completionWithItemsHandler = { (nil, completed, _ , error) in
@@ -57,10 +61,20 @@ class ResultViewController: UIViewController {
         
         present(activityController, animated: true)
     }
-    
+
     func hideButtons(bool: Bool){
         self.backButton.isHidden = bool
         self.shareButton.isHidden = bool
+        self.logoImageView.isHidden = !bool
+        
+        // Provisório (enquanto nao tem animação)
+        self.logoImageView.alpha = 1
+//        UIImageView.animate(withDuration: 0.3, delay: 1.0, animations: {
+//            self.logoImageView.alpha = 1
+//        }) { _ in
+//
+//        }
+        
     }
     
     func createImageFromView() -> UIImage{

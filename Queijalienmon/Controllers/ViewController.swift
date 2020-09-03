@@ -12,10 +12,10 @@ import Foundation
 class ViewControlle: UIViewController{
     
     @IBOutlet weak var canvasButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool){
@@ -29,5 +29,8 @@ class ViewControlle: UIViewController{
         self.canvasButton.setBackgroundImage(drawImage, for: .normal)
         self.canvasButton.setTitle("", for: .normal)
     }
-
+    
+    @IBAction func tapBackButton() {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 }
