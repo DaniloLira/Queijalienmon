@@ -13,7 +13,7 @@ import Vision
 
 public class PokeIdentifier {
     
-    static private let model = Classificador_Pokemon_1().model
+    static private let model = Poklassifier().model
     
     static func identify(draw image: UIImage) {
         let orientation = CGImagePropertyOrientation.up
