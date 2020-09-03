@@ -90,7 +90,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doB-5g-IsU">
-                                <rect key="frame" x="77" y="767" width="260" height="70"/>
+                                <rect key="frame" x="77" y="776" width="260" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Identificar pokemon" image="identifyButton"/>
                                 <connections>
