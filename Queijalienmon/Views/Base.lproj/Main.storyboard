@@ -93,7 +93,6 @@
                                 <state key="normal" title="Identificar pokemon" image="identifyButton"/>
                                 <connections>
                                     <action selector="identifyDraw:" destination="LFF-oI-dNk" eventType="touchUpInside" id="r1x-Qu-lTS"/>
-                                    <segue destination="GlC-XK-jiU" kind="show" id="VfU-uX-ei6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -113,7 +112,7 @@
         <!--Result View Controller-->
         <scene sceneID="rTl-4L-e6h">
             <objects>
-                <viewController id="GlC-XK-jiU" customClass="ResultViewController" customModule="Queijalienmon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GlC-XK-jiU" customClass="ResultViewController" customModule="Queijalienmon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jLd-ZD-r2k">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

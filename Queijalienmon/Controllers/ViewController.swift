@@ -22,7 +22,7 @@ class ViewControlle: UIViewController{
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(true)
         
-        guard let drawImage = PokeResult.shared.drawImage else {
+        guard let drawImage = PokeResult.drawImage else {
             self.canvasButton.setTitle("Toque para desenhar", for: .normal)
             return
         }
@@ -33,11 +33,23 @@ class ViewControlle: UIViewController{
 
     
     @IBAction func identifyDraw(_ sender: Any) {
-        guard let image = PokeResult.shared.drawImage else {
+        guard let image = PokeResult.drawImage else {
             //Tratar erro
             return
         }
         
-        PokemonIdentifier.shared.identify(draw: image)
+        DispatchQueue.global(qos: .background).async {
+            PokeIdentifier.identify(draw: image)
+            //Ainda ta dando erro pq o resultado da imagem não chega a tempo
+            PokeAPI.get(name: PokeResult.name!)
+            
+            DispatchQueue.main.async {
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
+                nextViewController.modalPresentationStyle = .fullScreen
+                self.navigationController?.show(nextViewController, sender: nil)
+            }
+        }
+        
     }
 }

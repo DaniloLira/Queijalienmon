@@ -23,24 +23,10 @@ class ResultViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        guard let draw = PokeResult.shared.drawImage else {
-            //Tratar erro
-            return
-        }
-        
-        self.drawImageView.image = draw
-        
-        guard let image = PokeResult.shared.image else {
-            //Tratar erro
-            return
-        }
-        
-        self.pokeImageView.image = image
-        
-        self.messageLabel.text = "Parabéns! O seu \(PokeResult.shared.name!) obteve o grau Rick chapado de Queijo Coalho! Você é um grande desenhista, seu pokelover!"
-        
-        print("Oi")
-        
+        self.messageLabel.text = "Parabéns! O seu \(PokeResult.name ?? "") obteve o grau Rick chapado de Queijo Coalho! Você é um grande desenhista, seu pokelover!"
+        self.drawImageView.image = PokeResult.drawImage
+        self.pokeImageView.image = PokeResult.image
+
     }
     
     @IBAction func tapBackButton() {

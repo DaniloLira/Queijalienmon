@@ -11,10 +11,8 @@ import UIKit
 import PencilKit
 
 class PokeResult {
-    
-    static let shared = PokeResult()
-    var name: String? = nil
-    var image: UIImage? = nil
-    var draw: PKDrawing? = nil
-    var drawImage: UIImage? = nil
+    static var name: String? = nil
+    static var image: UIImage? = nil
+    static var draw: PKDrawing? = nil
+    static var drawImage: UIImage? = nil
 }
