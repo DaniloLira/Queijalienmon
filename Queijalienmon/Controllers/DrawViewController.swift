@@ -45,6 +45,7 @@ class DrawViewController: UIViewController, PKCanvasViewDelegate, PKToolPickerOb
         if image != nil {
             PokeResult.draw = self.canvas.drawing
             PokeResult.drawImage = image!
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
