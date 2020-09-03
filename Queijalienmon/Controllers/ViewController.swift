@@ -40,16 +40,26 @@ class ViewControlle: UIViewController{
         
         DispatchQueue.global(qos: .background).async {
             PokeIdentifier.identify(draw: image)
-            //Ainda ta dando erro pq o resultado da imagem não chega a tempo
             PokeAPI.get(name: PokeResult.name!)
             
+            while PokeResult.image == nil {
+                self.loadScreen()
+            }
+            
             DispatchQueue.main.async {
+                //Remover tela de espera
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
                 nextViewController.modalPresentationStyle = .fullScreen
                 self.navigationController?.show(nextViewController, sender: nil)
             }
         }
-        
+    }
+    
+    func loadScreen() {
+        DispatchQueue.main.async {
+            self.identifyDrawButton.isHidden = true
+        }
+
     }
 }

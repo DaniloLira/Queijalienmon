@@ -30,6 +30,7 @@ class PokeAPI {
         
         session.dataTask(with: url!) {data, response, error in
             PokeResult.image = UIImage(data: data!)!
+            
         }.resume()
     }
     
