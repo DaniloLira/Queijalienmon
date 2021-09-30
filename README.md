@@ -37,7 +37,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## Sobre o projeto
-O Queijalienmon é um aplicativo iOS voltado para deteccao de desenhos de pokemons utilizando inteligencia artificial. Utilizamos o coreML para criar um modelo de deteccao e reconhecer qual criatura o usuario desenhou. Esta aplicacao foi desenvolvida durante um challenge da Apple Developer Academy com o objetivo principal de desenvolver um conhecimento sobre as tecnologias utilizadas
+O Queijalienmon é um aplicativo iOS voltado para detecção de desenhos de pokémons utilizando inteligência artificial. Utilizamos o CoreML para criar um modelo de detecção e reconhecer qual criatura o usuário desenhou. Esta aplicação foi desenvolvida durante um challenge da Apple Developer Academy com o objetivo principal de desenvolver um conhecimento sobre as tecnologias utilizadas
 
 | Inicio | Canvas |
 |----------|----------|
